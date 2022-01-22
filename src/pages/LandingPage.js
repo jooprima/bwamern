@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import second from 'elements';
-;
+import second from 'elements/Button';
 
 
 export default class LandingPage extends Component {
