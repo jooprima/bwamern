@@ -50,7 +50,7 @@ export default function Button(props) {
           to={props.href}
           className={className.join(" ")}
           style={props.style}
-          onClick={onClick}
+          onClick={onclick}
         >
           {props.children}
         </Link>
@@ -75,6 +75,7 @@ Button.propTypes = {
   href: propTypes.string,
   target: propTypes.string,
   className: propTypes.string,
+  isExternal: propTypes.bool,
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
   isSmall: propTypes.bool,
