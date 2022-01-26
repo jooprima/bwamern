@@ -75,7 +75,7 @@ export default function Hero(props) {
                 alt={`${props.data.cities} Cities`}
               />
               <h6 className="mt-3">
-                {formatNumber(props.data.cities)}{" "}
+                {formatNumber  (props.data.cities)}{" "}
                 <span className="text-gray-500 font-weight-light">cities</span>
               </h6>
             </div>
