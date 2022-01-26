@@ -14,6 +14,7 @@
 @import "images";
 @import "code";
 @import "grid";
+@import "container-grid";
 @import "tables";
 @import "forms";
 @import "buttons";
@@ -48,9 +49,9 @@
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: $primary;
-  &:hover{
-    color:$primary;
-    text-decoration:none;
+  &:hover {
+    color: $primary;
+    text-decoration: none;
   }
 }
 
@@ -65,9 +66,9 @@ header {
 
     ul.navbar-nav {
       li.nav-item {
-        &.active{
-          a.nav-link{
-            color:$primary;
+        &.active {
+          a.nav-link {
+            color: $primary;
           }
         }
         a {
@@ -84,4 +85,12 @@ header {
       }
     }
   }
+}
+
+section {
+  margin-bottom: 70px;
+}
+
+.card {
+  height: 100%;
 }
