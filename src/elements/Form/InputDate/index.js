@@ -14,6 +14,36 @@ export default function Number(props) {
 
     const patternNumeric = new RegExp("[0-9]*");
     const isNumeric = patternNumeric.test(value);
+
+    if (isNumeric && +value <= max && +value >= min) {
+      props.onchange({
+        target: {
+          name: name,
+          value: +value,
+        },
+      });
+      setInputValue(`${prefix}${value}${suffix}`);
+    }
+  };
+
+  const minus = () => {
+    value > min &&
+      onchange({
+        target: {
+          name: name,
+          value: value - 1,
+        },
+      });
+  };
+
+  const plus = () => {
+    value < max &&
+      onchange({
+        target: {
+          name: name,
+          value: value + 1,
+        },
+      });
   };
 
   return <div></div>;
