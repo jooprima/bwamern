@@ -40,3 +40,4 @@ test("Should able to change value", () => {
   fireEvent.change(input, { target: { value: 23 } });
   expect(input.value).toBe("23");
 });
+ 
