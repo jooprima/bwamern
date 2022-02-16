@@ -47,21 +47,30 @@ export default function Number(props) {
   };
 
   return (
-  <div className={["input-number mb-3", props.outerClassName].join(" ")}>
+    <div className={["input-number mb-3", props.outerClassName].join(" ")}>
       <div className="input-group">
-          <div className="input-group-prepend">
-              <span className="input-group-text minus" onClick={minus}>
-                  -
-              </span>
-          </div>
-          <input 
+        <div className="input-group-prepend">
+          <span className="input-group-text minus" onClick={minus}>
+            -
+          </span>
+        </div>
+        <input
           min={min}
           max={max}
           pattern="[0-9]*"
           className="form-control"
-          placeholder={plceholder ? placeholder : ""} />
+          placeholder={plceholder ? placeholder : "0"}
+          value={String(InputValue)}
+          onchange={onchange}
+        />
+        <div className="input-group-append">
+          <span className="input-group-text plus" onClick={plus}>
+            +
+          </span>
+        </div>
       </div>
-  </div>);
+    </div>
+  );
 }
 
 Number.defaultProps = {
