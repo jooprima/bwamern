@@ -83,7 +83,7 @@ export default function Date(props) {
       </div>
     </div>
   );
-}
+}   
 
 Date.propTypes = {
   value: propTypes.object,
