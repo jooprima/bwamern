@@ -4,7 +4,7 @@ import InputNumber from "elements/Form/InputNumber";
 
 export default class Example extends Component {
   state = {
-    value: "",
+    value: "1",
   };
 
   handleChange = (e) => {
@@ -21,7 +21,9 @@ export default class Example extends Component {
           <div className="col-auto">
             <InputNumber
               max={30}
-              onchange={this.handleChange}
+              suffix=" night"
+              isSuffixPlural
+              onChange={this.handleChange}
               name="value"
               value={this.state.value}
             />

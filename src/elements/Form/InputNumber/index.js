@@ -3,11 +3,12 @@ import propTypes from "prop-types";
 import "./index.scss";
 
 export default function Number(props) {
-  const { value, placeholder, name, min, max, prefix, suffix } = props;
+  const { value, placeholder, name, min, max, prefix, suffix, isSuffixPlural } =
+    props;
 
-  const { InputValue, setInputValue } = useState(`${prefix}${value}${suffix}`);
+  const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
 
-  const onchange = (e) => {
+  const onChange = (e) => {
     let value = String(e.target.value);
     if (prefix) value = value.replace(prefix);
     if (suffix) value = value.replace(suffix);
@@ -16,19 +17,21 @@ export default function Number(props) {
     const isNumeric = patternNumeric.test(value);
 
     if (isNumeric && +value <= max && +value >= min) {
-      props.onchange({
+      props.onChange({
         target: {
           name: name,
           value: +value,
         },
       });
-      setInputValue(`${prefix}${value}${suffix}`);
+      setInputValue(
+        `${prefix}${value}${suffix}${isSuffixPlural && value > 1 ? "s" : ""}`
+      );
     }
   };
 
   const minus = () => {
     value > min &&
-      onchange({
+      onChange({
         target: {
           name: name,
           value: value - 1,
@@ -38,10 +41,10 @@ export default function Number(props) {
 
   const plus = () => {
     value < max &&
-      onchange({
+      onChange({
         target: {
           name: name,
-          value: value + 1,
+          value: +value + 1,
         },
       });
   };
@@ -59,9 +62,9 @@ export default function Number(props) {
           max={max}
           pattern="[0-9]*"
           className="form-control"
-          placeholder={plceholder ? placeholder : "0"}
+          placeholder={placeholder ? placeholder : "0"}
           value={String(InputValue)}
-          onchange={onchange}
+          onChange={onChange}
         />
         <div className="input-group-append">
           <span className="input-group-text plus" onClick={plus}>
@@ -82,7 +85,8 @@ Number.defaultProps = {
 
 Number.propTypes = {
   value: propTypes.oneOfType([propTypes.string, propTypes.number]),
-  onchange: propTypes.func,
+  onChange: propTypes.func,
+  isSuffixPlural: propTypes.bool,
   placeholder: propTypes.string,
   outerClassName: propTypes.string,
 };
