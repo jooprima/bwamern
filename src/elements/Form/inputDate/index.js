@@ -10,8 +10,6 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import formatDate from "utils/formatDate";
 import iconCalendar from "assets/images/ic_calendar.svg";
 
-import React from "react";
-
 export default function Date(props) {
   const { value, placeholder, name } = props;
   const [isShowed, setIsShowed] = useState(false);
