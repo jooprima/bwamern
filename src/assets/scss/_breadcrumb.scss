@@ -20,7 +20,7 @@
     &::before {
       display: inline-block; // Suppress underlining of the separator in modern browsers
       padding-right: $breadcrumb-item-padding;
-      color: $breadcrumb-divider-color;
+      color: $gray-400;
       content: escape-svg($breadcrumb-divider);
     }
   }
@@ -40,6 +40,6 @@
   }
 
   &.active {
-    color: $grey-900;
+    color: $gray-900;
   }
 }

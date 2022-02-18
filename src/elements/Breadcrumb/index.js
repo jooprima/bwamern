@@ -4,10 +4,12 @@ import propTypes from "prop-types";
 import Button from "elements/Button";
 import "./index.scss";
 
-export default function Breadcrumb() {
+export default function Breadcrumb(props) {
+  const className = ["breadcrumb", props.className];
+
   return (
     <nav aria-label="breadcrumb">
-      <ul className={className.join(" ")}>
+      <ol className={className.join(" ")}>
         {props.data.map((item, index) => {
           return (
             <li
@@ -26,7 +28,7 @@ export default function Breadcrumb() {
             </li>
           );
         })}
-      </ul>
+      </ol>
     </nav>
   );
 }
