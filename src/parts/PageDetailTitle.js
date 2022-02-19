@@ -3,8 +3,6 @@ import { Fade } from "react-reveal";
 
 import Breadcrumb from "elements/Breadcrumb";
 
-import React from "react";
-
 export default function PageDetailTitle({ data, breadcrumb }) {
   return (
     <section className="container spacing-sm">
