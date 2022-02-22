@@ -20,7 +20,7 @@ export default class BookingForm extends Component {
     };
   }
 
-  updateDate = (e) => {
+  updateData = (e) => {
     this.setState({
       ...this.state,
       data: {
@@ -88,7 +88,7 @@ export default class BookingForm extends Component {
         />
 
         <label htmlFor="date">Pick a date</label>
-        <InputDate onChange={this.updateDate} name="date" value={data.date} />
+        <InputDate onChange={this.updateData} name="date" value={data.date} />
 
         <h6
           className="text-gray-500 font-weight-light"
