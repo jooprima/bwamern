@@ -1,7 +1,8 @@
 import React from "react";
 import { Fade } from "react-reveal/Fade";
+import { InputText } from "elements/Form";
 
-export default function BookingInformation() {
+export default function BookingInformation(props) {
   return (
     <Fade>
       <div className="container" style={{ marginBottom: 30 }}>
